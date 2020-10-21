@@ -14,7 +14,11 @@ app.get("/" , (req, res) => {
 app.get( '/about' , (req,res)=>{
     res.send('This is the about page')
 })
+//Return an HTML file
+app.get( '/htmlfile', (req,res)=>{
+    res.sendFile(__dirname + '/index.html');
 
+})
 
 //Created a server and have it listen on port 3000
 app.listen(3000, () => console.log("Listening on port 3000"))
