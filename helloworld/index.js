@@ -8,6 +8,9 @@ const mongoose = require('mongoose')
 //Importing Bodyparser into our project
 const bodyParser= require('body-parser');
 
+//Import the dotenv
+require('dotenv/config');
+
 //Importing Pug to file
 const path = require('path')
 
@@ -61,7 +64,7 @@ app.use('/posts', ()=>{
 })
 
 //Connect to DB
-mongoose.connect('mongodb+srv://kesa:spoiling11@helloworld.auuw9.mongodb.net/<dbname>?retryWrites=true&w=majority',{ useUnifiedTopology: true },()=>{
+mongoose.connect( process.env.DB_CONNECTION,{useNewUrlParser: true, useUnifiedTopology: true }, ()=>{
     console.log('connected to db!')
 })
 
