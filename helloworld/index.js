@@ -1,6 +1,9 @@
 
-//Importing express in our project using require keyword
+//Importing express package into this file 
 const  express = require ('express');
+
+//Import mongoose
+const mongoose = require('mongoose')
 
 //Importing Bodyparser into our project
 const bodyParser= require('body-parser');
@@ -8,20 +11,17 @@ const bodyParser= require('body-parser');
 //Importing Pug to file
 const path = require('path')
 
-// //const MongoClient = require('mongodb').MongoClient  
-// MongoClient.connect('link to database', (err, database) => {
-//     // ... start the server 
-//  })
-
-//Creating an express application by calling the express() function
+//Execute express by calling the express() function and assign it to the variable "app"
 const app = express();
+//Middleware: 
 //Use the body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 //Use pug
 app.set('view engine','pug')
 app.set('views', path.join(__dirname, 'views'))
-
+//ROUTES
 //specify what to do when the user hits the '/'(home page) route endpoint
+// "/" is the route
 app.get("/" , (req, res) => {
     res.send("Homepage!Hello world, We did it Kesaaa")
 });
@@ -55,5 +55,16 @@ app.get('/pugform', (req,res) => {
     res.render("form")
 });
 
+//Middleware
+app.use('/posts', ()=>{
+    console.log('This is a middleware running')
+})
+
+//Connect to DB
+mongoose.connect('mongodb+srv://kesa:spoiling11@helloworld.auuw9.mongodb.net/<dbname>?retryWrites=true&w=majority',{ useUnifiedTopology: true },()=>{
+    console.log('connected to db!')
+})
+
+// How to start listening to the server
 //Created a server and have it listen on port 3000
 app.listen(3000, () => console.log("Listening on port 3000"))
