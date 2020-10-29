@@ -1,7 +1,11 @@
 
+//Concept from Video1
+
 const express = require('express');
 
 const router = express.Router();
+
+const posts = require('../models/post')
 
 //The GET METHOD
 //specify what to do when the user hits the '/'(home page) route endpoint
@@ -14,10 +18,6 @@ router.get("/" , (req, res) => {
 router.get( '/about' , (req,res)=>{
     res.send('This is the about page')
 });
-//Return an HTML file
-router.get( '/htmlfile', (req,res)=>{
-    res.sendFile(__dirname + '/index.html');
-});
 
 //PathParams and Query Params
 router.get("/pathparams/:name", (req,res)=>{
@@ -29,6 +29,7 @@ router.get("/user", (req,res)=>{
     res.send('This is class'+ req.query.class + 'cohort' + req.query.cohort)
 })
 
+//pugforms
 router.get('/pugform', (req,res) => {
     res.render("form")
 });
@@ -39,6 +40,23 @@ router.post('/quotes', (req,res)=>{
     console.log('Helooooooooo');
     console.log(req.body); //Displays browser form data in console and dependant on bodyparser
 });
+
+
+router.post('/schema', (req,res)=>{
+    const post = new posts({
+        title: req.body.title,
+        description: req.body.description
+    });
+    post.save()
+        .then(data => {
+            res.json(data);
+    })
+        .catch(err =>{
+            res.json({message: err});
+    })
+
+});
+
 
 
 
