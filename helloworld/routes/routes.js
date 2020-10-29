@@ -34,6 +34,19 @@ router.get('/pugform', (req,res) => {
     res.render("form")
 });
 
+router.get('/puglife', (req,res)=>{
+    res.render('home')
+})
+
+//posting route
+router.post('/pugform',(req,res)=>{
+    console.log(req.body);
+    res.render('thankYou')
+  })
+
+router.get('/puglife', (req,res)=>{
+    res.render('home')
+})
 
 //Forms
 router.post('/quotes', (req,res)=>{

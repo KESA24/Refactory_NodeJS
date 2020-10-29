@@ -1,8 +1,51 @@
-doctype html  
-html(lang='en')  
- head
-   title Pug
- body
-   h1 Pug Examples
-   div.container
-     p Cool Pug example!
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/bootstrap_css/bootstrap.css')
+  link(rel='stylesheet' href='/css/home.css')
+  title Puglife
+script(src='/js/jquery-3.5.1.slim.min.js')
+script(src='/js/popper.min.js')
+script(src='/js/bootstrap_js/bootstrap.js')
+.container-fluid
+  ul.nav.justify-content-center
+    li.nav-item
+      a.nav-link(href='#') Home
+    li.nav-item
+      a.nav-link(href='#') About
+    li.nav-item
+      a.nav-link(href='#') Blog
+    li.nav-item
+      a.nav-link(href='#' tabindex='-1' aria-disabled='true') Documentation
+  #carouselExampleFade.carousel.slide.carousel-fade(data-ride='carousel')
+    .carousel-inner
+      .carousel-item.active
+        img.d-block.w-100(src='/images/grasspug.jpg' alt='...')
+        .carousel-caption.d-none.d-md-block
+          h5 The Pug Life
+          p Pug is a template engine for Node and for the browser.
+          a(href='http://localhost:3000/pugform')
+            button.btn.btn-warning.btn-lg(type='submit') Try it here
+      .carousel-item
+        img.d-block.w-100(src='/images/peoplepug.jpg' alt='...')
+        .carousel-caption.d-none.d-md-block.tex-center
+          h5 The Pug Life
+          p
+            | It compiles to HTML and has a simplified syntax, which can make you more productive and your code more readable.
+          a(href='http://localhost:3000/pugform')
+            button.btn.btn-warning.btn-lg(type='submit') Try it here
+      .carousel-item
+        img.d-block.w-100(src='/images/roadpug.jpg' alt='...')
+        .carousel-caption.d-none.d-md-block
+          h5 The Pug Life
+          p
+            | Pug makes it easy both to write reusable HTML, as well as to render data pulled from a database or API.
+          a(href='http://localhost:3000/pugform')
+            button.btn.btn-warning.btn-lg(type='submit') Try it here
+    a.carousel-control-prev(href='#carouselExampleFade' role='button' data-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.sr-only Previous
+    a.carousel-control-next(href='#carouselExampleFade' role='button' data-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.sr-only Next
