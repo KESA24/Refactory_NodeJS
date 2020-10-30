@@ -40,7 +40,7 @@ router.get('/puglife', (req,res)=>{
 
 //posting route
 router.post('/pugform',(req,res)=>{
-    console.log(req.body);
+    console.log(res.body);
     res.render('thankYou')
   })
 
