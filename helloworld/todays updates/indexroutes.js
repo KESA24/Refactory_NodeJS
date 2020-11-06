@@ -1,32 +1,13 @@
 const express = require('express');
 const router = express.Router();
-
-const Registration = require('../models/registration')
+const Registration = require('../models/Registration')
 
 // specify what to do when user hit the '/'(home page) route/endpoint
-
-//Get the form
 router.get('/', (req,res)=>{
-    res.render('formJA', { title: 'Registration form' })
+    res.render('form', { title: 'Registration form' })
 })
 
-//Send/save data to the database
-
-router.post('/', (req,res)=>{
-   console.log(req.body);
-
-   const registration = new Registration(req.body);
-         registration.save()
-        .then(() => { res.send('Thank you for your registration!'); })
-        .catch((err) => {
-            console.log(err);
-            res.send('Sorry! Something went wrong.');
-    });
-
-      //res.render('formJA', { title: 'Registration form' })
-})
-
-// Asynchronous,save data to the database
+// save data to the database
 router.post('/', async(req,res)=>{
     try{
         const registration = new Registration(req.body);
@@ -50,6 +31,5 @@ router.get('/userlist', async(req, res)=>{
         res.status(400).send("Unable to find items in the database");
     }  
 })
-
 
 module.exports = router;
