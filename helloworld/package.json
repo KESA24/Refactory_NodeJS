@@ -2,10 +2,10 @@
   "name": "helloworld",
   "version": "1.0.0",
   "description": "",
-  "main": "indexJA.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon indexJA.js"
+    "start": "nodemon index.js"
   },
   "author": "Kesa",
   "license": "ISC",

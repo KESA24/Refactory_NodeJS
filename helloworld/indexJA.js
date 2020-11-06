@@ -4,12 +4,33 @@
 const express = require('express')
 const bodyParser = require('body-parser') 
 const indexRoutes = require("./routes/indexroutesJA");
+require("dotenv/config")
+const mongoose = require("mongoose");
+
+
+
+// const Registration = mongoose.model('Registration')
+
+
 // const teachingRoutes = require('./routes/teachingroutes');
 
 
 // create an express application by calling the express() function
 // Instantiations
 const app = express();
+
+mongoose.connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  
+  mongoose.connection
+    .on('open', () => {
+      console.log('Mongoose connection open');
+    })
+    .on('error', (err) => {
+      console.log(`Connection error: ${err.message}`);
+    });
 
 //Configs
 app.set('view engine', 'pug');

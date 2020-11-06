@@ -34,8 +34,15 @@ router.get('/pugform', (req,res) => {
     res.render("form")
 });
 
-router.get('/puglife', (req,res)=>{
-    res.render('home')
+router.get('/register', (req,res) => {
+    res.render("contactform")
+});
+router.get('/thankyou', (req,res)=>{
+    res.render('thankYou')
+})
+
+router.get('/portfolio', (req,res) =>{
+    res.render('portfolio')
 })
 
 //posting route

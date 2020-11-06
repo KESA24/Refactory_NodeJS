@@ -1,0 +1,17 @@
+meta(charset="UTF-8")
+title The Agritect
+link(rel="stylesheet", href="/css/contactForm.css")
+link(rel="icon", href="/images/favicon.png", sizes="16x16", type="image/png")
+.wrapper
+  .title
+    h1 Tell me alittle bit about yourself
+  .contact-form
+    .input-fields
+      input.input(type="text", placeholder="Name")
+      input.input(type="text", placeholder="Email Address")
+      input.input(type="text", placeholder="Phone")
+      input.input(type="text", placeholder="Subject")
+    .msg
+      textarea(placeholder="Message")
+      a(href="http://localhost:3000/thankyou", style="text-decoration: none;")
+        .btn Send
