@@ -2,11 +2,25 @@ extends layout
 block content
     header.card-header
         h4.card-title Welcome 
+    |&nbsp
+    div.form-row
+        div.col.form-group.col-md-10    
+            form.search(action='/userlist')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='name' placeholder="Enter your search term(name) ...")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="submit") 
+        div.col.form-group.col-md-2
+            a(href="/update") Update Items
+
     table.table
         thead.thead-dark
             tr
                 th Name
                 th Email
+                th Delete
+                th Edit
                 //- th Lastname
                 //- th Username
                 //- th Gender
@@ -25,6 +39,10 @@ block content
                     //- td #{user.gender}
                     //- td #{user.lastname}
                     //- td #{user.city}
+                    td
+                        form(method="post" action='/delete')
+                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete
             else
                 p No registrations yet :(
 
