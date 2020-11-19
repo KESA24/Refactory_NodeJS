@@ -1,0 +1,79 @@
+//- This file was to testt the footer
+
+
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title The Agritect
+script(src="https://kit.fontawesome.com/8af5379226.js", crossorigin="anonymous")
+link(rel="stylesheet", href="/css/assignment.css")
+link(rel="stylesheet", href="/css/footer.css")
+script(src="https://kit.fontawesome.com/a076d05399.js")
+link(rel="icon", href="/images/favicon.png", sizes="16x16", type="image/png")
+link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,500&display=swap", rel="stylesheet")
+header
+  img(src="/images/assignment/logo.png", alt)
+  nav.nav-container
+    ul
+      li
+        a.active(href) Home
+      li
+        a(href) About
+      li
+        a(href) Portfolio
+      li
+        a(href) Contact
+#container-bg
+  .content-wrapper
+    h1 KESA PR
+    p The best Agritect in town
+    a(href="contact.html") Book your consultation
+
+meta(name="viewport", content="width=device-width,initial-scale=1")
+footer
+  .main-content
+    .left.box
+      h2 About us
+      .content
+        p.
+          
+          We promote and support the urban farming practice by easing market access to improve on family earnings and livelihoods
+          
+        .social
+          a(href)
+            span.fab.fa-facebook-f
+          a(href="#")
+            span.fab.fa-twitter
+          a(href)
+            span.fab.fa-instagram
+          a(href)
+            span.fab.fa-youtube
+    .center.box
+      h2 Address
+      .content
+        .place
+          span.fas.fa-map-marker-alt
+          span.text Kampala, Uganda
+        .phone
+          span.fas.fa-phone-alt
+          span.text +256-70619933
+        .email
+          span.fas.fa-envelope
+          span.text info@ufarm.co.ug
+    .right.box
+      h2 Contact us
+      .content
+        form(action="#")
+          .email
+            .text Email *
+            input(type="email", required)
+          .msg
+            .text Message *
+            textarea#msgForm(rows="2", cols="70", required)
+            br
+            .btn
+              button(type="submit") Send
+            .bottom
+              center
+                span.credit Created By the Agritect|
+                span.far.fa-copyright
+                |  2020 All rights reserved.

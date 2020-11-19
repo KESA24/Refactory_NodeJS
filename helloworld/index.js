@@ -18,7 +18,7 @@ const app = express(); //Execute express by calling the express() function and a
   app.use(bodyParser.json()); //Middleware:Use the body-parser
 
   // Use the imported routes
-  app.use('/', indexRoutes);
+  app.use( indexRoutes);
   app.use(routes);
   
   //Return an HTML file

@@ -10,6 +10,9 @@ router.get('/', (req,res)=>{
     res.render('formJA', { title: 'Registration form' })
 })
 
+router.get('/test',  (req,res) =>{
+    res.render('tesrting')
+})
 //Send/save data to the database
 
 // router.post('/', (req,res)=>{
@@ -68,7 +71,7 @@ router.post('/delete', async(req,res)=>{
     }})
 
 
-//Update
+//Update: still not working 8/11
 router.get('/update/:id', async (req, res) => {
     try {
         const updateUser = await Registration.findOne({ _id:req.params.id })
@@ -85,6 +88,10 @@ router.post('/update', async (req, res) => {
     } catch (err) {
         res.status(404).send("Unable to update item in the database");
     }    
+})
+
+router.get('/updateform', (req,res)=>{
+    res.render('formkp', { title: 'Registration form' })
 })
 
 

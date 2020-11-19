@@ -7,11 +7,6 @@ router.get('/', (req, res) => {
     res.render('form', { title: 'Registration form' })
 })
 
-//testing footer
-router.get('/test',  (req,res) =>{
-    res.render('tesrting')
-})
-
 // save data to the database
 router.post('/', async (req, res) => {
     try {
